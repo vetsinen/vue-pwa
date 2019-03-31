@@ -17,11 +17,15 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  mounted() {
+    this.axios.get('https://jsonplaceholder.typicode.com/todos/3').then((response) => {
+      console.log(response.data)
+    })
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
   margin: 40px 0 0;
